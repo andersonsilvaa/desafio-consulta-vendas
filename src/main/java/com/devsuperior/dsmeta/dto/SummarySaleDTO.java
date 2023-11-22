@@ -1,22 +1,22 @@
 package com.devsuperior.dsmeta.dto;
 
-import java.time.LocalDate;
-
 import com.devsuperior.dsmeta.entities.Sale;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.modelmapper.ModelMapper;
+
+import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class SaleMinDTO {
+public class SummarySaleDTO {
 
-	private Long id;
-	private Double amount;
-	private LocalDate date;
 	private String sellerName;
+	private Double total;
 
-	public SaleMinDTO(Sale entity) {
+	public SummarySaleDTO(Sale entity) {
 		new ModelMapper().map(entity, this);
 	}
 }
